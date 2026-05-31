@@ -17,7 +17,7 @@ const EditProducts = () => {
 
   async function editValueData() {
     try {
-      const response = await fetch(`/api/editValueData/${id}`);
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/editValueData/${id}`);
       const record = await response.json();
 
       setEdit({
@@ -50,7 +50,7 @@ const EditProducts = () => {
     };
 
     try {
-      const response = await fetch(`/api/productupdate/${id}`, {
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/productupdate/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),

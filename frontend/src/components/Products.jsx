@@ -16,7 +16,7 @@ const Products = () => {
   async function productsData(selectCategory = "All") {
     try {
       const response = await fetch(
-        `http://localhost:5000/api/userproducts?category=${selectCategory}&search=${search}`
+        `${import.meta.env.VITE_API_URL}/api/userproducts?category=${selectCategory}&search=${search}`
       );
 
       const record = await response.json();
@@ -55,7 +55,7 @@ const Products = () => {
               className="bg-white shadow rounded-lg p-4 hover:shadow-lg transition"
             >
               <img
-                src={`http://localhost:5000/uploads/${item.productImage}`}
+                src={`${import.meta.env.VITE_API_URL}/uploads/${item.productImage}`}
                 alt={item.productName}
                 className="w-full h-48 object-cover rounded"
               />

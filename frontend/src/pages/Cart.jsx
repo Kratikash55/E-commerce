@@ -56,7 +56,7 @@ const Cart = () => {
           cartData.map((value) => (
             <div key={value._id} className="flex items-center gap-5 py-4 border-b">
               <img
-                src={`http://localhost:5000/uploads/${value.productImage}`}
+                src={`${import.meta.env.VITE_API_URL}/uploads/${value.productImage}`}
                 alt="Product"
                 className="w-16 h-16 object-cover rounded border"
               />

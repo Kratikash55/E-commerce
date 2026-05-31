@@ -13,7 +13,8 @@ const [products ,setProducts] = useState([]);
 
 async function getAllProducts() {
     try {
-    const response = await fetch("/api/getproduct");
+   const response = await fetch(
+  `${import.meta.env.VITE_API_URL}/api/getproduct`);
     const result = await response.json();
     console.log(result);
     setProducts(result.data);
@@ -28,7 +29,7 @@ async function getAllProducts() {
 
 async function handleDelete(id){
     try {
-        const response = await fetch(`/api/productdelete/${id}`,
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/productdelete/${id}`,
 {
     method:"DELETE",
     } );

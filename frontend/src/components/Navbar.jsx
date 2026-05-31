@@ -34,7 +34,7 @@ const Navbar = () => {
       }
 
      const response = await fetch(
-  `http://localhost:5000/api/userproducts?category=All&search=${value}`
+  `${import.meta.env.VITE_API_URL}/api/userproducts?category=All&search=${value}`
 );
 
       const result = await response.json();
@@ -122,7 +122,7 @@ const Navbar = () => {
                         className="flex items-center gap-3 p-3 hover:bg-green-50 cursor-pointer"
                       >
                         <img
-                          src={`http://localhost:5000/uploads/${item.productImage}`}
+                          src={`${import.meta.env.VITE_API_URL}/uploads/${item.productImage}`}
                           alt={item.productName}
                           className="w-12 h-12 object-cover rounded"
                         />

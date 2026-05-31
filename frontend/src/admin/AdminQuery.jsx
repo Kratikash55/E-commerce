@@ -10,7 +10,7 @@ const AdminQuery = () => {
 
    async function AllQuery() {
     try {
-      const response = await fetch("/api/userallquery");
+      const response = await fetch(`${import.meta.env.VITE_API_URL}/api/userallquery`);
       const record = await response.json();
       if (response.ok) {
         setQuery(record.data);
@@ -24,7 +24,7 @@ const AdminQuery = () => {
 
   async function handleDelete(id){
     try {
-        const response = await fetch(`/api/deletequery/${id}`,{
+        const response = await fetch(`${import.meta.env.VITE_API_URL}/api/deletequery/${id}`,{
             method:"DELETE"
         });
         const record = response.json();
