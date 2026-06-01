@@ -64,8 +64,8 @@ return (
         products.map((items,index)=>(
         <div key={index} className='bg-white rounded-xl shadow p-4 hover:shadow-xl transition '>
 
-       <img
-  src={`http://localhost:5000/uploads/${items.productImage}`}
+      <img
+  src={`${import.meta.env.VITE_API_URL}/uploads/${items.productImage}`}
   alt="Product img"
   className="w-full h-40 object-cover rounded-md mb-4 border"
 />

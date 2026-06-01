@@ -56,6 +56,9 @@ const Products = () => {
             >
               <img
                 src={`${import.meta.env.VITE_API_URL}/uploads/${item.productImage}`}
+
+
+                
                 alt={item.productName}
                 className="w-full h-48 object-cover rounded"
               />
